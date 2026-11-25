@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: race-app
 data:
-  release: "v2"
+  release: "v3"
