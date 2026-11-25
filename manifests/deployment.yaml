@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: race-app
+  labels:
+    app: race-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: race-app
+  template:
+    metadata:
+      labels:
+        app: race-app
+        release: v1
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.25-alpine
+          resources:
+            requests: {cpu: 10m, memory: 16Mi}
+            limits: {cpu: 50m, memory: 64Mi}
